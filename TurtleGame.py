@@ -109,19 +109,13 @@ def collisionDetection(turtlePos, appleLocationsArr, boxWidth, boxHeight):
         if turtlePos[0] - boxWidth <= i[0] <= turtlePos[0] + boxWidth:
             #If the Vec2D's y-coordinate is within the extents of the player's hitbox's y-coordinates also..
             if turtlePos[1] - boxHeight <= i[1] <= turtlePos[1] + boxHeight:
-                # print("Y Pos")
-                # print(turtlePos[1] - 2)
-                # print(i[1])
-                # print(turtlePos[1] + 2)
                 #Remove the apple Vec2D we are currently using from the the list of apple locations
                 appleLocationsArr.remove(i)
                 #Overwrites the dot  by moving the apple creator to the removed dot's location and drawing a black dot on top of it
                 appleCreator.goto(i)
                 appleCreator.dot(3)
-                # print("Score")
                 #Increments the temporary score to be added later
                 tempScore += 1
-                # print(tempScore)
                 #Switches the player's color
                 player.color(random.choice(colors))
     #Returns the temporary score so that it can increment the total score
